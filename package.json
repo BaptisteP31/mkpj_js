@@ -1,16 +1,16 @@
 {
   "name": "mkpj_js",
   "bin": {
-    "mkpj": "./src/index.js"
+    "mkpj": "src/index.ts"
   },
   "version": "1.0.0",
   "description": "The glorious mkpj but this time in JS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx ncc build src/index.js -o dist",
-    "build-win": "npx ncc build src/index.js -o dist && pkg --targets node12-win-x64 -o dist/mkpj.exe dist/index.js",
-    "build-linux": "npx ncc build src/index.js -o dist && pkg --targets node12-linux-x64 -o dist/mkpj dist/index.js"
+    "build": "npx ncc build src/index.ts -o dist",
+    "build-win": "npx ncc build src/index.ts -o dist && pkg --targets node12-win-x64 -o dist/mkpj.exe dist/index.js",
+    "build-linux": "npx ncc build src/index.ts -o dist && pkg --targets node12-linux-x64 -o dist/mkpj dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,10 @@
   },
   "homepage": "https://github.com/BaptisteP31/mkpj_js#readme",
   "dependencies": {
+    "@types/node": "^20.10.0",
     "@vercel/ncc": "^0.38.1",
-    "pkg": "^5.8.1"
+    "fs": "^0.0.1-security",
+    "pkg": "^5.8.1",
+    "typescript": "^5.3.2"
   }
 }
