@@ -1,0 +1,29 @@
+{
+  "name": "mkpj_js",
+  "bin": {
+    "mkpj": "./src/index.js"
+  },
+  "version": "1.0.0",
+  "description": "The glorious mkpj but this time in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx ncc build src/index.js -o dist",
+    "build-win": "npx ncc build src/index.js -o dist && pkg --targets node12-win-x64 -o dist/mkpj.exe dist/index.js",
+    "build-linux": "npx ncc build src/index.js -o dist && pkg --targets node12-linux-x64 -o dist/mkpj dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaptisteP31/mkpj_js.git"
+  },
+  "author": "Baptiste Paqueriaud",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/BaptisteP31/mkpj_js/issues"
+  },
+  "homepage": "https://github.com/BaptisteP31/mkpj_js#readme",
+  "dependencies": {
+    "@vercel/ncc": "^0.38.1",
+    "pkg": "^5.8.1"
+  }
+}
